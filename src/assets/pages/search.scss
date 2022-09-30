@@ -1,0 +1,43 @@
+@import '../base/base';
+@import '../themes/variable';
+
+.search{
+    .container{
+        .search-prod{
+                .input-search{
+                    width: 400px;
+                    height: 50px;
+                    padding: 12px 20px;
+                    border: 1px solid #eee;
+                    border-radius: 4px;
+                    transition: 0.25s ease;
+                    color: #6a5af9;
+                    margin-right: 10px;
+                    
+                }
+                .input-search:focus{
+                    border-color: #6a5af9;
+                }
+                .btn-search{
+                    @include button($c1-bg-violet,12px 18px, none,50px,14px,$text-semiBold,$cl-white,$c2-bg-blue,$cl-white )
+                }
+        }
+    }
+    .search-result{
+        margin-top: 30px;
+        color: $cl-white;
+        padding: 10px 130px;
+        background: linear-gradient(180deg, #F21299 0%, #1B02B5 100%);;
+    }
+    .container{
+        .show_price{
+            .select-price{
+                padding: 10px;
+                width: 443px;
+            }
+        }
+        .show_prod{
+            margin-top: 40px;
+        }
+    }
+}

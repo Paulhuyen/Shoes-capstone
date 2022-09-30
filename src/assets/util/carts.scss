@@ -1,0 +1,45 @@
+@import '../base/base';
+@import '../themes/variable';
+
+.carts{
+    .container{
+        .carts-title{
+
+        }
+        .carts-table{
+            text-align: center;
+            .table{
+                .table-tbody{
+                    .quantity-prod{
+                        .btn{
+                            background-color: $c1-bg-violet;
+                            text-align: center;
+                            width: 40px;
+                            height: 40px;
+                            color: $cl-white;
+                            
+                        }
+                        .btn-quantity{
+                            padding: 1px 25px;
+                            border: none;
+                            margin: 0 10px;
+                        }
+                    }
+                    .action-prod{
+                        .btn-edit{
+                            background-color: $c1-bg-violet;
+                           color: $cl-white;
+                           margin-right: 10px;
+
+                        }
+                        .btn-delete{
+                            background-color: $bg-danger;
+                            color: $cl-white;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

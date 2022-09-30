@@ -1,0 +1,80 @@
+//Color
+$cl-black: black;
+$cl-white: white;
+$c2-cl-black: #000000;
+$c3-cl-white-op: #CBC9C9;
+$c4-cl : #1ED90E;
+$c6-cl: #AE18E2;
+//-----------background
+$c1-bg-violet: #6200EE;
+$bg-danger:  #EB5757;
+$c2-bg-blue: #1877F2;
+$c1-bg-dark : #000000;
+$c2-bg-gold: #F8B653;
+$c3-bg:#F8F8F8;
+$c4-bg:#E1B067;
+$c5-bg:#DEDDDC;
+$c6-bg: #AE18E2;
+$bg-thead:#D9D9D9;
+
+// fonts
+$f-family-primary: 'Inter';
+$f-family-Second: 'Roboto';
+
+
+
+
+
+$c1-bg-grd:linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
+$c2-bg-grd:linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+//----------- rgb
+$c1-bg-rgb-dark: rgba(33, 33, 33, 0.1);
+// $c2-bg-rgb-dark: rgba(33, 33, 33, 0.08);
+//text font size, weight
+$text-xs: 14px;
+$text-base: 16px;
+$text-md: 18px;
+$text-lg: 20px;
+$text-xl: 22px;
+$text-30: 30px;
+$text-40: 40px;
+$text-50: 50px;
+$text-60: 60px;
+//Font Weight
+$text-thin: 100;
+$text-light: 300;
+$text-regular: 300;
+$text-medium: 500;
+$text-semiBold: 600;
+$text-bold: 900;
+
+//-------------- Mixin ----------------
+@mixin text($fz: $text-base, $fw: $text-light, $c: $c2-text-dark) {
+    // cho phép định nghĩa giá trị mặc định
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+}
+@mixin button ($bg, $pd, $bd, $br, $fz, $fw, $c, $bg-hover, $c-hover) {
+    background: $bg;
+    padding: $pd;
+    border: $bd;
+    border-radius: $br;
+    // -webkit-box-shadow: 0 3px 6px #c9d8f4;
+    // box-shadow: 0 3px 6px #c9d8f4;
+    cursor: pointer;
+    @include text($fz, $fw , $c);
+    &:hover {
+        background: $bg-hover;
+        color: $c-hover;
+    }
+}
+@mixin input-form ($bg,$pd,$bd,$bdr,$fz,$fw,$c){
+    background: $bg;
+    padding: $pd;
+    border: $bd;
+    border-radius: $bdr;
+    // cursor: pointer;
+    @include text($fz, $fw , $c);
+}
+

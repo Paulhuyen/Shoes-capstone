@@ -1,0 +1,71 @@
+@import '../base/base';
+@import '../themes/variable';
+
+
+.container{
+    .form-style-rg{
+        padding: 20px 40px;
+        // .col-6{
+            .form-group{
+                position: relative;
+                height: 132px;
+                p{
+                    height: 30px;
+                }
+                .input-rg{
+                    width: 100%;
+                    transition: all 0.2s linear;
+
+                    @include input-form($c1-bg-rgb-dark, 16px 12px 14px 14px,none,4px 4px 0px 0px,$text-base,$text-thin,$cl-black);
+
+                }
+                .btn-submit{
+                    @include button($c1-bg-violet,12px 18px, none,50px,14px,$text-semiBold,$cl-white,$c2-bg-blue,$cl-white )
+                }
+                input{
+                    transition: all 0.2s linear;
+                }
+                input:focus{
+                    border-color: $c1-bg-violet;
+                }
+                .fas{
+                    position: absolute;
+                    right: 15px;
+                    top: 55%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+                .btn-eye{
+                    background-color: none;
+                    border: none;
+                    width: 50px;
+                    position: absolute;
+                    right: 10px;
+                    top: 58%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+                .hidden{
+                    display: none;
+                }
+                
+
+            }
+        // }
+    }
+}
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { 
+//  }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {  }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {  }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {  }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {  }

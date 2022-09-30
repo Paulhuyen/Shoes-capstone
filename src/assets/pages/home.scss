@@ -1,0 +1,39 @@
+@import '../base/base';
+@import '../themes/variable';
+
+
+.menu-navbar{
+    padding: 10px;
+    a{
+        text-decoration: none;
+        color: $cl-black;
+        margin-right: 20px;
+    }
+    .active-home{
+        // background-color: #F21299;
+        position: relative;
+        height: 3px;
+        padding: 5px;
+        border-bottom: 2px solid $c1-bg-dark;
+    }
+}
+.realate-product{
+    margin-top: 50px;
+    .realate-product_title{
+        background: linear-gradient(180deg, #F21299 0%, #1B02B5 100%);
+        padding: 10px 10px;
+        font-size: $text-40;
+        font-weight: $text-semiBold;
+        color: $cl-white;
+    }
+    .row {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .col-pr {
+            padding: 10px 30px;
+            width: 33%;
+        }
+    }
+}

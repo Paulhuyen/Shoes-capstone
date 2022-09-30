@@ -1,0 +1,111 @@
+@import '../base/base';
+@import '../themes/variable';
+
+
+.profile-information{
+    margin-top: 10px;
+    width: 100%;
+    .profile-title{
+        float: left;
+        width: 100%;
+
+        .title{
+            left: 0;
+            width: 400px;
+            font-size: $text-30;
+            padding: 10px;
+            font-weight: $text-semiBold;
+            background: $c1-bg-grd;
+        }
+    }
+    .profile{
+        margin-top: 10px;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        .profile-avatar{
+            min-width: 20%;
+            padding: 10px 50px;
+            img{
+                width: 225px;
+                height: 225px;
+                border-radius: 150px;
+                padding: 20px;
+            }
+        }
+        .profile-form{
+            min-width: 80%;
+            padding: 0 50px;
+            .row{
+                .col-6{
+                    padding: 0 30px;
+                    .form-group{
+                        // margin-bottom: 30px;
+                        .input-form{
+                            width: 100%;
+                            transition: all 0.2s linear;
+        
+                            @include input-form($c1-bg-rgb-dark, 16px 12px 14px 14px,none,4px 4px 0px 0px,$text-base,$text-thin,$cl-black);
+                        }
+                        input:focus{
+                            border-color: $c1-bg-violet ;
+                        }
+                        .btn-submit{
+                            float: right;
+                            @include button($c1-bg-violet,12px 18px, none,50px,14px,$text-semiBold,$cl-white,$c2-bg-blue,$cl-white )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.profile-history{
+    padding: 20px 40px;
+    .tabs{
+        .tabsList{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            .tabHead{
+                padding: 10px;
+                font-weight: $text-medium;
+                font-size: $text-30;
+            }
+            .active{
+                color: $c6-cl;
+                border-bottom: 2px solid $c1-bg-violet ;
+
+            }
+        }
+        .tabContant{
+            padding: 30px;
+            .history-order{
+                p{
+                    color: $c6-cl;
+                }
+                .history-table{
+                    text-align: center;
+                    .thead{
+                        background-color:$bg-thead ;
+                    }
+                    .tbody{
+                        .img-prod{
+                            img{
+                            width: 80px;
+
+                            }
+                        }
+                        .quantity-prod{
+                            .btn-quantity{
+                                padding: 5px 40px;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
