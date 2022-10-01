@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Shoes-capstone/static/css/main.58adb8cc.css",
-    "main.js": "/Shoes-capstone/static/js/main.5d904acc.js",
-    "static/js/787.a47bb9df.chunk.js": "/Shoes-capstone/static/js/787.a47bb9df.chunk.js",
-    "static/media/logo.svg": "/Shoes-capstone/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Shoes-capstone/index.html",
-    "main.58adb8cc.css.map": "/Shoes-capstone/static/css/main.58adb8cc.css.map",
-    "main.5d904acc.js.map": "/Shoes-capstone/static/js/main.5d904acc.js.map",
-    "787.a47bb9df.chunk.js.map": "/Shoes-capstone/static/js/787.a47bb9df.chunk.js.map"
+    "main.css": "./static/css/main.58adb8cc.css",
+    "main.js": "./static/js/main.21f5d053.js",
+    "static/js/787.a47bb9df.chunk.js": "./static/js/787.a47bb9df.chunk.js",
+    "static/media/logo.svg": "./static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "./index.html",
+    "main.58adb8cc.css.map": "./static/css/main.58adb8cc.css.map",
+    "main.21f5d053.js.map": "./static/js/main.21f5d053.js.map",
+    "787.a47bb9df.chunk.js.map": "./static/js/787.a47bb9df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58adb8cc.css",
-    "static/js/main.5d904acc.js"
+    "static/js/main.21f5d053.js"
   ]
 }
