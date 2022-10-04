@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.container .form-style-rg {
+  padding: 20px 40px;
+}
+.container .form-style-rg .form-group {
+  position: relative;
+  height: 132px;
+}
+.container .form-style-rg .form-group p {
+  height: 30px;
+}
+.container .form-style-rg .form-group .input-rg {
+  width: 100%;
+  transition: all 0.2s linear;
+  background: rgba(33, 33, 33, 0.1);
+  padding: 16px 12px 14px 14px;
+  border: none;
+  border-radius: 4px 4px 0px 0px;
+  font-size: 16px;
+  font-weight: 100;
+  color: black;
+}
+.container .form-style-rg .form-group .btn-submit {
+  background: #6200EE;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.container .form-style-rg .form-group .btn-submit:hover {
+  background: #1877F2;
+  color: white;
+}
+.container .form-style-rg .form-group input {
+  transition: all 0.2s linear;
+}
+.container .form-style-rg .form-group input:focus {
+  border-color: #6200EE;
+}
+.container .form-style-rg .form-group .fas {
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.container .form-style-rg .form-group .btn-eye {
+  background-color: none;
+  border: none;
+  width: 50px;
+  position: absolute;
+  right: 10px;
+  top: 58%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.container .form-style-rg .form-group .hidden {
+  display: none;
+}

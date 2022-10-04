@@ -26,12 +26,12 @@ export const registerApi = (values) => {
     return async(dispatch)=> {
         var mess ='';
         try {
-            // const result = await http.post('/Users/signup')
-            let result = await axios({
-                url:'https://shop.cyberlearn.vn/api/Users/signup',
-                method: "POST",
-                data:values
-            })
+            const result = await http.post('/Users/signup', values)
+            // let result = await axios({
+            //     url:'https://shop.cyberlearn.vn/api/Users/signup',
+            //     method: "POST",
+            //     data:values
+            // })
             mess = result.data;
             console.log(mess.content);
             alert('Đăng ký thành công')

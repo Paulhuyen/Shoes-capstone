@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.slick-prev {
+  left: 80px;
+  z-index: 100;
+}
+
+.slick-next {
+  right: 80px;
+  z-index: 100;
+}
+
+.slick-prev::before {
+  font-size: 50px;
+  color: black;
+  left: 100px;
+}
+
+.slick-next::before {
+  font-size: 50px;
+  color: black;
+}
+
+.carousel-inner .row {
+  padding: 0 10px;
+}
+.carousel-inner .row .carousel-image {
+  height: 500px;
+  z-index: 1;
+}
+.carousel-inner .row .carousel-image img {
+  margin-left: 20%;
+  height: 500px;
+  object-fit: contain;
+}
+.carousel-inner .row .carousel-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 500px;
+}
+.carousel-inner .row .carousel-title .carousel-title_inner {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  margin-left: auto;
+}
+.carousel-inner .row .carousel-title .carousel-title_inner .desc {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+}
+.carousel-inner .row .carousel-title .carousel-title_inner .btn-buynow {
+  background-color: #F8B653;
+  padding: 13px 34px;
+  text-decoration: none;
+  color: white;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../../assets/styles.scss";
@@ -9,6 +9,11 @@ import axios from "axios";
 // import { ACCESS_TOKEN, getStore, setCookie } from "../../util/tools";
 
 export default function Login() {
+  const [showPassWord, setShowPassword] = useState("password");
+  const [showEyeOpen, setShowEyeOpen] = useState("none");
+  const [showEyeClose, setShowEyeClose] = useState("block");
+
+
   const responseFacebook = (response) => {
     console.log(response);
     axios({
@@ -69,11 +74,24 @@ export default function Login() {
           <div className="form-group mt-3">
             <p>Password</p>
             <input
-              type="password"
+              type={showPassWord}
               name="password"
               id="password"
               className="input-form"
               onChange={frm.handleChange}
+            />
+                        <i
+              className="fas fas-eye fa-eye eye-open "  style={{ display: showEyeOpen }}   onClick={() => {
+                setShowEyeClose("block");
+                setShowEyeOpen("none");
+                setShowPassword("password");
+              }}
+            />
+            <i className="fas fas-eye fa-eye-slash eye-close" style={{ display: showEyeClose }} onClick={() => {
+                setShowEyeClose("none");
+                setShowEyeOpen("block");
+                setShowPassword("text");
+              }}
             />
             {frm.errors.password ? (
               <p className="text-danger">{frm.errors.password}</p>

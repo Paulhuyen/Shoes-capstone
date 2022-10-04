@@ -1,7 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import "../../assets/styles.scss";
 export default function Profile() {
     const [index,setIndex] = useState(0);
+    const {userLogin} = useSelector(state => state.userReducer);
+    console.log(userLogin);
+    console.log(userLogin.ordersHistory);
+    console.log(userLogin.ordersHistory.orderDetail);
+
+    
 
   return (
     <div>
@@ -66,35 +73,41 @@ export default function Profile() {
                     }}> Favourite</div>
                 </div>
                 <div className="tabContant" hidden={index!=0}>
-                    <div className="history-order">
-                        <p>+ Orders have been placed on 29 - 9 -2022</p>
-                        <table className="history-table table">
-                            <thead className='thead'>
-                                <tr>
-                                    <th>id</th>
-                                    <th>img</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody className='tbody'>
-                                <tr>
-                                    <td>1</td>
-                                    <td className='img-prod'><img  src="https://i.pravatar.cc/?u=paul.huyentran123@gmail.com" alt="..." /></td>
-                                    <td>Product 1</td>
-                                    <td>50$</td>
-                                    <td className='quantity-prod'>
-                                        <button className='btn-quantity'>5</button>
-                                    </td>
-                                    <td className='total-prod'>
-                                        50$
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                {userLogin.ordersHistory?.map((item, index) => {
+                                    return       <div className="history-order" key={index}>
+                                                    <p>+ Orders have been placed on {item.date}</p>
+                                                    <table className="history-table table">
+                                                        <thead className='thead'>
+                                                            <tr>
+                                                                <th>id</th>
+                                                                <th>img</th>
+                                                                <th>Name</th>
+                                                                <th>Price</th>
+                                                                <th>Quantity</th>
+                                                                <th>Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody className='tbody'>
+                                                                 {userLogin.ordersHistory.orderDetail?.map((itemDetail, indexDetail)=>{
+                                                                        return    <tr key={indexDetail}>
+                                                                        <td>{item.id}</td>
+                                                                        <td className='img-prod'><img  src="https://i.pravatar.cc/?u=paul.huyentran123@gmail.com" alt="..." /></td>
+                                                                        <td>{itemDetail}</td>
+                                                                        <td>{itemDetail.price}</td>
+                                                                        <td className='quantity-prod'>
+                                                                            <button className='btn-quantity'>{item.quan}</button>
+                                                                        </td>
+                                                                        <td className='total-prod'>
+                                                                            50$
+                                                                        </td>
+                                                                    </tr>
+                                                                 })}
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                })}
+
                 </div>
                 <div className="tabContant" hidden={index!=1}>
                 <div className="history-order">

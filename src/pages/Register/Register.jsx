@@ -49,6 +49,11 @@ export default function Register() {
         ),
     }),
     onSubmit: (values) => {
+      if (values.gender === "true") {
+        values.gender = true;
+      } else {
+        values.gender = false;
+      }
       dispatch(registerApi(values));
       console.log(values);
     },

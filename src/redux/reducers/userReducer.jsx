@@ -30,20 +30,17 @@ export const loginApi = (userLogin) => {
 
     return async (dispatch) => {
         try {
-            // const result = await http.post('/Users/signin')
-            const result = await axios({
-                url:'https://shop.cyberlearn.vn/api/Users/signin',
-                method:'POST',
-                data:userLogin
-            })
+            const result = await http.post('/Users/signin',userLogin)
+
             console.log('login',result);
-            //sau khi đăng nhập thành công lưu vào cookie vaf local
-            setCookie(ACCESS_TOKEN,result.data.content.accessToken,30);
+            //sau khi đăng nhập thành công lưu vào vào local
             setStore(ACCESS_TOKEN,result.data.content.accessToken);
             //đăng nhập thành công chuyển hướng trang
             history.push('/profile');
             //đăng nhập thành công dispatch action getProfile
             dispatch(getProfileApi());
+            // oder history
+            const action = getProfileApi(result.data.content)
 
         }catch(err){
             // history.push('/')
@@ -73,19 +70,13 @@ export const loginApi = (userLogin) => {
 //     }
 //   }
 
-export const getProfileApi = (accessToken = getStore(ACCESS_TOKEN))=> {
+export const getProfileApi = ()=> {
     return async dispatch => {
         try {
             const result = await http.post('/Users/getProfile')
-            // axios({
-            //     url: 'https://shop.cyberlearn.vn/api/Users/getProfile',
-            //     method: 'POST',
-            //     headers: {
-            //         Authorization: 'Bearer ' + accessToken 
-            //     }
-            // });
             const action = getProfileAction(result.data.content);
             dispatch(action);
+            console.log('profile', action)
             // lưu vào storage
             setStoreJson(USER_LOGIN, result.data.content)
         }catch(err){
@@ -93,3 +84,4 @@ export const getProfileApi = (accessToken = getStore(ACCESS_TOKEN))=> {
         }
     }
 }
+
