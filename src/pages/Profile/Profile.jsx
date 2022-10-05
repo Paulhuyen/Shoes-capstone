@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 import "../../assets/styles.scss";
 export default function Profile() {
     const [index,setIndex] = useState(0);
-    const {userLogin} = useSelector(state => state.userReducer);
+    const {userLogin} = useSelector((state) => state.userReducer);
     console.log(userLogin);
-    console.log(userLogin.ordersHistory);
     console.log(userLogin.ordersHistory.orderDetail);
 
     
@@ -73,8 +72,8 @@ export default function Profile() {
                     }}> Favourite</div>
                 </div>
                 <div className="tabContant" hidden={index!=0}>
-                {userLogin.ordersHistory?.map((item, index) => {
-                                    return       <div className="history-order" key={index}>
+                {userLogin?.ordersHistory.map((item) => {
+                                    return       <div className="history-order" key={item.id}>
                                                     <p>+ Orders have been placed on {item.date}</p>
                                                     <table className="history-table table">
                                                         <thead className='thead'>
@@ -88,14 +87,14 @@ export default function Profile() {
                                                             </tr>
                                                         </thead>
                                                         <tbody className='tbody'>
-                                                                 {userLogin.ordersHistory.orderDetail?.map((itemDetail, indexDetail)=>{
-                                                                        return    <tr key={indexDetail}>
-                                                                        <td>{item.id}</td>
-                                                                        <td className='img-prod'><img  src="https://i.pravatar.cc/?u=paul.huyentran123@gmail.com" alt="..." /></td>
-                                                                        <td>{itemDetail}</td>
-                                                                        <td>{itemDetail.price}</td>
+                                                                 {item.orderDetail.map((prod, index)=>{
+                                                                        return    <tr key={index}>
+                                                                        <td>{prod.id}</td>
+                                                                        <td className='img-prod'><img  src={prod.image}alt="..." /></td>
+                                                                        <td>{prod.name}</td>
+                                                                        <td>{prod.price}</td>
                                                                         <td className='quantity-prod'>
-                                                                            <button className='btn-quantity'>{item.quan}</button>
+                                                                            <button className='btn-quantity'>{prod.quantity}</button>
                                                                         </td>
                                                                         <td className='total-prod'>
                                                                             50$
